@@ -3,166 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aceite Batana</title>
+  <title>Aceite de Batana</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding-top: 80px; /* Aumentado para evitar que el header tape el título */
-      background-color: #fefefe;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
       line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #4CAF50;
+      background-color: #006400;
       color: white;
-      padding: 10px 0;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 0 10px;
+    header h1 {
+      font-size: 1.3rem;
+      animation: fadeInDown 1s ease;
     }
 
     nav a {
       color: white;
+      margin-left: 1rem;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    .hero {
+      padding: 100px 20px 40px;
+      text-align: center;
+      background-color: #e9f5ee;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
     }
 
     section {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    h1, h2 {
-      color: #4CAF50;
-      margin-top: 0;
+    section h2 {
+      color: #006400;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease;
     }
 
-    img {
-      width: 100%;
-      max-width: 400px;
+    .whatsapp-button {
       display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .whatsapp-btn {
-      display: block;
-      width: max-content;
-      margin: 30px auto;
+      width: fit-content;
       background-color: #25D366;
       color: white;
-      padding: 15px 25px;
+      padding: 12px 20px;
+      border-radius: 50px;
       text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
+      margin: 40px auto;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebd57;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
       text-align: center;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50%;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 480px) {
-      nav {
-        gap: 10px;
-        font-size: 14px;
-      }
-
-      .whatsapp-btn {
-        font-size: 16px;
-        padding: 12px 20px;
-      }
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: #ddd;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <h1>Aceite de Batana</h1>
     <nav>
-      <a href="#descripcion">Descripción</a>
-      <a href="#presentaciones">Precios</a>
       <a href="#beneficios">Beneficios</a>
-      <a href="#uso">Modo de uso</a>
-      <a href="#compra">Compra</a>
+      <a href="#usos">Usos</a>
+      <a href="#presentacion">Presentación</a>
     </nav>
   </header>
 
-  <section id="descripcion">
-    <h1>Aceite de Batana</h1>
-    <img src="https://ryfproductosintegrales.github.io/aceite-batana/img/aceite-batana.jpg" alt="Aceite Batana">
-    <p>El aceite de batana es un producto natural extraído de la palma americana, utilizado tradicionalmente por la comunidad indígena Miskita en Honduras. Este aceite es rico en ácidos grasos esenciales y antioxidantes, lo que lo convierte en un excelente aliado para el cuidado del cabello y la piel.</p>
-  </section>
-
-  <section id="presentaciones">
-    <h2>Presentaciones y Precios</h2>
-    <ul>
-      <li>60 ml – RD$ 500 (detal) / RD$ 450 (por mayor)</li>
-      <li>120 ml – RD$ 850 (detal) / RD$ 765 (por mayor)</li>
-      <li>240 ml – RD$ 1,500 (detal) / RD$ 1,350 (por mayor)</li>
-    </ul>
-  </section>
+  <div class="hero">
+    <h2>Producto Natural para tu Cabello y Piel</h2>
+    <img src="batana.jpg" alt="Aceite de Batana" />
+  </div>
 
   <section id="beneficios">
-    <h2>Beneficios</h2>
-    <ul>
-      <li>Fortalece el cabello desde la raíz.</li>
-      <li>Previene y reduce la caída del cabello.</li>
-      <li>Repara puntas abiertas.</li>
-      <li>Estimula el crecimiento del cabello.</li>
-      <li>Regenera el cuero cabelludo dañado.</li>
-    </ul>
+    <h2>Beneficios del Aceite de Batana</h2>
+    <p>Regenera y fortalece el cabello dañado, estimula el crecimiento capilar y combate la caída. Rico en ácidos grasos esenciales y antioxidantes, también ayuda a hidratar y rejuvenecer la piel.</p>
   </section>
 
-  <section id="uso">
-    <h2>Modo de Uso</h2>
-    <p>Aplicar una pequeña cantidad de aceite sobre el cuero cabelludo y el cabello limpio. Masajear suavemente y dejar actuar por al menos 30 minutos. Para mejores resultados, usar 2-3 veces por semana.</p>
+  <section id="usos">
+    <h2>¿Cómo se usa?</h2>
+    <p>Aplicar directamente en el cuero cabelludo con un suave masaje. Puede usarse en mascarillas capilares, barba, pestañas o incluso como humectante facial y corporal.</p>
   </section>
 
-  <section id="compra">
-    <h2>Compra el Aceite de Batana</h2>
-    <a class="whatsapp-btn" href="https://wa.me/1XXXXXXXXXX?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">¡Comprar por WhatsApp!</a>
+  <section id="presentacion">
+    <h2>Presentación del Producto</h2>
+    <p>Envase de 120 ml. Producto 100% natural, elaborado artesanalmente. Ideal para uso personal o como regalo saludable y práctico.</p>
   </section>
 
-  <a class="whatsapp-float" href="https://wa.me/1XXXXXXXXXX?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">💬</a>
-
-</body>
-</html>
+  <a href="https://wa.me/18094254540"
