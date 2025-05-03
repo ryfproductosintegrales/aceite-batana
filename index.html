@@ -110,6 +110,14 @@
       font-weight: bold;
     }
 
+    .cuentas {
+      background: #eef;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
     footer {
       background-color: var(--color-primario);
       color: white;
@@ -134,24 +142,25 @@
     <section id="inicio">
       <h2>Inicio</h2>
       <p>Bienvenido a nuestra página oficial del Aceite de Batana. Aquí encontrarás toda la información sobre este producto natural que transforma tu cabello.</p>
-      <a class="boton-wsp" href="https://wa.me/18094254540?text=Hola%2C%20facturarme%20(x%20cantidad)%20del%20Aceite%20de%20Batana" target="_blank">Comprar por WhatsApp</a>
+      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
     </section>
 
     <section id="como-funciona">
       <h2>Cómo Funciona</h2>
       <p>El aceite penetra profundamente en el cuero cabelludo, nutriendo la raíz y restaurando la vitalidad del cabello.</p>
+      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
     </section>
 
     <section id="ofertas">
       <h2>Ofertas</h2>
-      <p>Compra 2 y obtén 1 gratis. Envío gratis en compras mayores a $50.</p>
-      <a class="boton-wsp" href="https://wa.me/18094254540?text=Hola%2C%20facturarme%20(x%20cantidad)%20del%20Aceite%20de%20Batana" target="_blank">Comprar por WhatsApp</a>
+      <p>Compra 2 y obtén 1 gratis. Envío gratis en compras mayores a RD$50.</p>
+      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
     </section>
 
     <section id="precios">
-      <h2>Precios y Pedido</h2>
+      <h2>PEDIDO</h2>
       <form id="formularioPedido">
-        <label>Nombre:</label>
+        <label>Nombre completo:</label>
         <input type="text" id="nombre" required />
 
         <label>Dirección:</label>
@@ -159,6 +168,12 @@
 
         <label>Cantidad de frascos:</label>
         <input type="number" id="cantidad" min="1" required />
+
+        <label>Forma de entrega:</label>
+        <select id="entrega">
+          <option value="A domicilio">A domicilio (+RD$300)</option>
+          <option value="Recoge en tienda">Recoge en tienda</option>
+        </select>
 
         <label>Forma de pago:</label>
         <select id="pago">
@@ -168,11 +183,7 @@
           <option value="Transferencia BHD">Transferencia - BHD</option>
         </select>
 
-        <label>Forma de entrega:</label>
-        <select id="entrega">
-          <option value="A domicilio">A domicilio</option>
-          <option value="Recoge en tienda">Recoge en tienda</option>
-        </select>
+        <div class="cuentas" id="cuentasBancarias"></div>
 
         <div class="total">Total: <span id="totalPagar">RD$ 0</span></div>
 
@@ -189,30 +200,62 @@
     const cantidad = document.getElementById('cantidad');
     const totalPagar = document.getElementById('totalPagar');
     const botonEnviar = document.getElementById('botonEnviar');
+    const entrega = document.getElementById('entrega');
+    const pago = document.getElementById('pago');
+    const cuentasDiv = document.getElementById('cuentasBancarias');
 
     function calcularTotal() {
       const cant = parseInt(cantidad.value) || 0;
       let precio = cant >= 6 ? 7 : 10;
-      let total = cant * precio;
+      let subtotal = cant * precio;
+      let extra = entrega.value === "A domicilio" ? 300 : 0;
+      let total = subtotal + extra;
       totalPagar.textContent = `RD$ ${total}`;
-      return total;
+      return { total, subtotal, extra };
+    }
+
+    function mostrarCuentas() {
+      let cuenta = '';
+      switch (pago.value) {
+        case "Transferencia Banco Popular":
+          cuenta = "<strong>Banco Popular:</strong> 123-456789-0 a nombre de Batana SRL";
+          break;
+        case "Transferencia Banreservas":
+          cuenta = "<strong>Banreservas:</strong> 001-2345678-9 a nombre de Batana SRL";
+          break;
+        case "Transferencia BHD":
+          cuenta = "<strong>BHD:</strong> 402-9876543-2 a nombre de Batana SRL";
+          break;
+        default:
+          cuenta = "";
+      }
+      cuentasDiv.innerHTML = cuenta;
+      cuentasDiv.style.display = cuenta ? "block" : "none";
     }
 
     function actualizarEnlaceWhatsApp() {
       const nombre = document.getElementById('nombre').value.trim();
       const direccion = document.getElementById('direccion').value.trim();
-      const cant = document.getElementById('cantidad').value;
-      const pago = document.getElementById('pago').value;
-      const entrega = document.getElementById('entrega').value;
-      const total = calcularTotal();
+      const cant = cantidad.value;
+      const formaPago = pago.value;
+      const formaEntrega = entrega.value;
+      const { total, subtotal, extra } = calcularTotal();
 
-      const mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.\n\nDirección: ${direccion}\nForma de pago: ${pago}\nEntrega: ${entrega}\nTotal a pagar: RD$ ${total}`;
-      const url = `https://wa.me/18094254540?text=${encodeURIComponent(mensaje)}`;
+      let mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.%0A%0A`;
+      mensaje += `Dirección: ${direccion}%0A`;
+      mensaje += `Forma de entrega: ${formaEntrega}%0A`;
+      mensaje += `Forma de pago: ${formaPago}%0A`;
+      if (extra > 0) mensaje += `Costo de envío: RD$ ${extra}%0A`;
+      mensaje += `Subtotal: RD$ ${subtotal}%0A`;
+      mensaje += `Total a pagar: RD$ ${total}`;
+
+      const url = `https://wa.me/18094254540?text=${mensaje}`;
       botonEnviar.href = url;
     }
 
     document.getElementById('formularioPedido').addEventListener('input', () => {
       calcularTotal();
+      mostrarCuentas();
       actualizarEnlaceWhatsApp();
     });
   </script>
