@@ -52,15 +52,16 @@
     }
 
     .contenedor {
-      padding: 100px 20px 50px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
 
-    section {
-      margin-bottom: 80px;
-    }
-
+section {
+  margin-bottom: 40px;
+}
     h2 {
       margin-bottom: 20px;
       font-size: 28px;
@@ -73,99 +74,54 @@
     }
 
     .boton-wsp {
-      display: inline-block;
-      background-color: var(--color-boton);
-      color: white;
-      padding: 12px 20px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-    }
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-    .boton-wsp:hover {
-      background-color: #1ebe5d;
-    }
+<div class="contenedor">
+  <section id="inicio">
+    <h2>Inicio</h2>
+    <p>
+      Bienvenido a nuestra página oficial del Aceite de Batana. Aquí encontrarás toda la información sobre este producto natural que transforma tu cabello.
+    </p>
+    <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
+  </section>
 
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  <section id="como-funciona">
+    <h2>Cómo Funciona</h2>
+    <p>
+      El aceite penetra profundamente en el cuero cabelludo, nutriendo la raíz y restaurando la vitalidad del cabello.
+    </p>
+    <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
 
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
+    <article class="subsection">
+      <h3 class="section-title">¿Qué es el Aceite de Batana?</h3>
+      <p><strong>El secreto de la palmera americana para nutrir y fortalecer tu cabello</strong></p>
+      <p>
+        Nuestro Aceite de Batana es un aceite vegetal 100% puro, obtenido por prensado en frío de los frutos de la palmera americana <em>Elaeis oleifera</em>.
+      </p>
+      <p>
+        Originario de la región Moskitia en Honduras, es conocido por los pueblos indígenas miskitos como “aceite milagroso” debido a sus múltiples beneficios para la piel y el cabello.
+      </p>
+      <p>
+        Enriquecido con ácidos grasos esenciales (omega-6 y omega-9) y vitamina E, nutre e hidrata profundamente desde la raíz hasta las puntas. Esta rica composición actúa reparando el cabello seco y dañado, mientras fortalece las hebras y aporta un brillo natural incomparable.
+      </p>
+    </article>
 
-    .total {
-      font-size: 20px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .cuentas {
-      background: #eef;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-      display: none;
-    }
-
-    footer {
-      background-color: var(--color-primario);
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div><strong>Aceite de Batana</strong></div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#como-funciona">Cómo Funciona</a>
-      <a href="#ofertas">Ofertas</a>
-      <a href="#precios">Precios</a>
-      <a href="#pedido">Pedido</a>
-    </nav>
-  </header>
-
-  <div class="contenedor">
-    <section id="inicio">
-      <h2>Inicio</h2>
-      <p>Bienvenido a nuestra página oficial del Aceite de Batana. Aquí encontrarás toda la información sobre este producto natural que transforma tu cabello.</p>
-      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
-    </section>
-
-    <section id="como-funciona">
-      <h2>Cómo Funciona</h2>
-      <p>El aceite penetra profundamente en el cuero cabelludo, nutriendo la raíz y restaurando la vitalidad del cabello.</p>
-      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a><br>
-      <div class="subsection">
-    <h3>¿Qué es el Aceite de Batana?</h3><br>
-    <p><strong>El secreto de la palmera americana para nutrir y fortalecer tu cabello</strong></p><br>
-    <p>Nuestro Aceite de Batana es un aceite vegetal 100% puro, obtenido por prensado en frío de los frutos de la palmera americana <em>Elaeis oleifera</em>.
-    </p><br>
-    <p>Originario de la región Moskitia en Honduras, es conocido por los pueblos indígenas miskitos como “aceite milagroso” debido a sus múltiples beneficios para la piel y el cabello.
-    </p><br>
-    <p>Enriquecido con ácidos grasos esenciales (omega-6 y omega-9) y vitamina E, nutre e hidrata profundamente desde la raíz hasta las puntas. Esta rica composición actúa reparando el cabello seco y dañado, mientras fortalece las hebras y aporta un brillo natural incomparable.
-    </p><br>
-    <div class="subsection">
-  <h3>Ingrediente Clave</h3><br>
-  <p><strong>100% Aceite puro de Batana (Elaeis oleifera).</strong><br>
-  Prensado en frío.<br>
-  Contiene naturalmente vitamina E y ácidos grasos Omega-6/9.<br>
-  Sin aditivos ni químicos.</p><br>
-
+    <article class="subsection">
+      <h3>Ingrediente Clave</h3>
+      <p>
+        <strong>100% Aceite puro de Batana (Elaeis oleifera).</strong><br>
+        Prensado en frío.<br>
+        Contiene naturalmente vitamina E y ácidos grasos Omega-6/9.<br>
+        Sin aditivos ni químicos.
+      </p>
+   
   <p>El Aceite de Batana se distingue por su pureza y riqueza natural. Entre sus componentes más importantes destacan:</p>
   <ul>
     <li><strong>Ácido oleico (Omega-9)</strong> y <strong>ácido linoleico (Omega-6):</strong> Grasas esenciales que nutren e hidratan el cabello en profundidad.</li>
@@ -174,6 +130,7 @@
     <li><strong>Fórmula 100% natural:</strong> Sin parabenos ni aditivos químicos, prensado en frío y certificado vegano, garantizando un producto limpio y de alta calidad.</li>
   </ul>
 </div>
+
 <div class="subsection">
   <h3>Beneficios del Aceite de Batana</h3>
 
