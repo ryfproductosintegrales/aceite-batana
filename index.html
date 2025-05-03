@@ -5,140 +5,467 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aceite de Batana</title>
   <style>
+    :root {
+      --color-primario: #003366;
+      --color-secundario: #f4f4f4;
+      --color-texto: #333;
+      --color-menu: white;
+      --color-boton: #25D366;
+      --blue1: #d0e7ff;   /* Para h2 */
+      --blue2: #e0f7ff;   /* Para h3 */
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: var(--color-secundario);
+      color: var(--color-texto);
+      padding-top: 80px; /* evita que el header tape el contenido */
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
     }
 
+    /* ----- HEADER y NAVEGACIÓN ----- */
     header {
-      background-color: #006400;
-      color: white;
-      padding: 1rem;
+      background-color: var(--color-primario);
+      color: var(--color-menu);
+      padding: 15px 20px;
       position: fixed;
-      width: 100%;
       top: 0;
+      width: 100%;
       z-index: 1000;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
-    header h1 {
-      font-size: 1.3rem;
-      animation: fadeInDown 1s ease;
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
-
-    nav a {
-      color: white;
-      margin-left: 1rem;
+    header nav a {
+      color: var(--color-menu);
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      font-size: 16px;
+    }
+    header nav a:hover {
+      text-decoration: underline;
     }
 
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    .hero {
-      padding: 100px 20px 40px;
-      text-align: center;
-      background-color: #e9f5ee;
-    }
-
-    .hero img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    section {
-      padding: 40px 20px;
+    /* ----- CONTENEDOR GENERAL ----- */
+    .contenedor {
+      padding: 20px;
       max-width: 900px;
       margin: auto;
     }
 
-    section h2 {
-      color: #006400;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      animation: fadeIn 1s ease;
+    section {
+      margin-bottom: 40px;
     }
 
-    .whatsapp-button {
-      display: block;
-      width: fit-content;
-      background-color: #25D366;
+    /* ----- ESTILO DE TÍTULOS ----- */
+    h2 {
+      display: inline-block;
+      background-color: var(--blue1);
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--color-primario);
+    }
+    h3 {
+      display: inline-block;
+      background-color: var(--blue2);
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: var(--color-primario);
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    blockquote {
+      margin: 16px 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--blue1);
+      background: #fff;
+    }
+
+    .boton-wsp {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--color-boton);
       color: white;
-      padding: 12px 20px;
-      border-radius: 50px;
       text-decoration: none;
-      margin: 40px auto;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .section.bg-light {
+      background-color: #fafafa;
+      padding: 40px 20px;
+    }
+
+    .pricing-table {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .pricing-option {
+      flex: 1;
+      min-width: 200px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .pricing-option .price {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .cta-button .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+    }
+    .btn-success {
+      background-color: #28a745;
+      color: #fff;
+    }
+    .btn-warning {
+      background-color: #ffc107;
+      color: #333;
     }
 
-    .whatsapp-button:hover {
-      background-color: #1ebd57;
+    .treatment-options .card {
+      flex: 1;
+      min-width: 280px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .treatment-options img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 12px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 500px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    form label {
+      font-weight: bold;
+    }
+    form input, form select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .total {
+      font-size: 18px;
+      margin-top: 10px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
-      background-color: #ddd;
+      background: #eaeaea;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* ----- BOTÓN FLOTANTE WHATSAPP ----- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--color-boton);
+      color: white;
+      padding: 14px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+
+    /* ----- ADAPTATIVO MÓVIL ----- */
+    @media (max-width: 600px) {
+      header nav a {
+        font-size: 14px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 20px;
+      }
+      .contenedor {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVEGACIÓN SUPERIOR -->
   <header>
-    <h1>Aceite de Batana</h1>
     <nav>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#usos">Usos</a>
-      <a href="#presentacion">Presentación</a>
+      <a href="#inicio">Inicio</a>
+      <a href="#como-funciona">Cómo Funciona</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#precios">Precios</a>
+      <a href="#pedido">Pedido</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Producto Natural para tu Cabello y Piel</h2>
-    <img src="batana.jpg" alt="Aceite de Batana" />
+  <div class="contenedor">
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>
+        Bienvenido a nuestra página oficial del Aceite de Batana. Aquí encontrarás toda la información sobre este producto natural que transforma tu cabello.
+      </p>
+      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Cómo Funciona</h2>
+      <p>
+        El aceite penetra profundamente en el cuero cabelludo, nutriendo la raíz y restaurando la vitalidad del cabello.
+      </p>
+      <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
+
+      <article class="subsection">
+        <h3>¿Qué es el Aceite de Batana?</h3>
+        <p><strong>El secreto de la palmera americana para nutrir y fortalecer tu cabello</strong></p>
+        <p>
+          Nuestro Aceite de Batana es un aceite vegetal 100% puro, obtenido por prensado en frío de los frutos de la palmera americana <em>Elaeis oleifera</em>.
+        </p>
+        <p>
+          Originario de la región Moskitia en Honduras, es conocido por los pueblos indígenas miskitos como “aceite milagroso” debido a sus múltiples beneficios para la piel y el cabello.
+        </p>
+        <p>
+          Enriquecido con ácidos grasos esenciales (omega-6 y omega-9) y vitamina E, nutre e hidrata profundamente desde la raíz hasta las puntas. Esta rica composición actúa reparando el cabello seco y dañado, mientras fortalece las hebras y aporta un brillo natural incomparable.
+        </p>
+      </article>
+
+      <article class="subsection">
+        <h3>Ingrediente Clave</h3>
+        <p>
+          <strong>100% Aceite puro de Batana (Elaeis oleifera).</strong><br>
+          Prensado en frío.<br>
+          Contiene naturalmente vitamina E y ácidos grasos Omega-6/9.<br>
+          Sin aditivos ni químicos.
+        </p>
+        <p>El Aceite de Batana se distingue por su pureza y riqueza natural. Entre sus componentes más importantes destacan:</p>
+        <ul>
+          <li><strong>Ácido oleico (Omega-9)</strong> y <strong>ácido linoleico (Omega-6):</strong> Grasas esenciales que nutren e hidratan el cabello en profundidad.</li>
+          <li><strong>Vitamina E:</strong> Poderoso antioxidante que repara la fibra capilar y protege contra el daño oxidativo.</li>
+          <li><strong>Tocoferoles (Vitaminas A y E)</strong> y <strong>fitoesteroles:</strong> Nutrientes antioxidantes que cuidan el cuero cabelludo y ayudan a proteger el cabello de los rayos UV y la contaminación.</li>
+          <li><strong>Fórmula 100% natural:</strong> Sin parabenos ni aditivos químicos, prensado en frío y certificado vegano, garantizando un producto limpio y de alta calidad.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="ofertas" class="section bg-light">
+      <h2>Ofertas</h2>
+      <p>Elige la cantidad que deseas y aprovecha nuestras tarifas especiales por volumen:</p>
+
+      <div class="pricing-table">
+        <div class="pricing-option">
+          <h3>Precio Detalle</h3>
+          <p>1 a 5 frascos</p>
+          <p class="price"><strong>RD$500 c/u</strong></p>
+        </div>
+
+        <div class="pricing-option">
+          <h3>Precio al Por Mayor</h3>
+          <p>6 frascos o más</p>
+          <p class="price"><strong>RD$450 c/u</strong></p>
+        </div>
+      </div>
+
+      <div class="cta-button" style="margin-top: 20px;">
+        <a href="https://wa.me/18094254540?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Aceite%20de%20Batana.%20Por%20favor%20indíqueme%20disponibilidad%20y%20formas%20de%20pago." target="_blank" class="btn btn-success">
+          🛒 Hacer Pedido por WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section id="precios" class="section">
+      <h2>El tratamiento perfecto para ti</h2>
+      <p>Elige el plan que más se ajuste a tus necesidades y comienza a transformar tu cabello desde hoy.</p>
+
+      <div class="treatment-options" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+        <!-- Opción 1 -->
+        <div class="card">
+          <img src="ruta-imagen-1.jpg" alt="1 Frasco - 15 días">
+          <h3>1 Frasco – Tratamiento de 15 días</h3>
+          <p><strong>RD$500</strong></p>
+          <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
+        </div>
+
+        <!-- Opción 2 -->
+        <div class="card">
+          <img src="ruta-imagen-2.jpg" alt="3 Frascos - 45 días">
+          <h3>3 Frascos – Tratamiento de 45 días</h3>
+          <p><strong>RD$1,350</strong> (RD$450 c/u)</p>
+          <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
+        </div>
+
+        <!-- Opción 3 -->
+        <div class="card">
+          <img src="ruta-imagen-3.jpg" alt="6 Frascos - 90 días">
+          <h3>6 Frascos – Tratamiento de 90 días</h3>
+          <p><strong>RD$2,700</strong> (Precio por mayor)</p>
+          <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="pedido" class="section bg-light">
+      <h2>Pedido</h2>
+      <p>Completa este formulario para procesar tu compra y coordinar el método de pago y entrega.</p>
+
+      <form id="formularioPedido">
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" required />
+
+        <label>Dirección:</label>
+        <input type="text" id="direccion" required />
+
+        <label>Cantidad de frascos:</label>
+        <input type="number" id="cantidad" min="1" required />
+
+        <label>Forma de entrega:</label>
+        <select id="entrega">
+          <option value="A domicilio">A domicilio (+RD$300)</option>
+          <option value="Recoge en tienda">Recoge en tienda</option>
+        </select>
+
+        <label>Forma de pago:</label>
+        <select id="pago">
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia Banco Popular">Transferencia - Banco Popular</option>
+          <option value="Transferencia Banreservas">Transferencia - Banreservas</option>
+          <option value="Transferencia BHD">Transferencia - BHD</option>
+        </select>
+
+        <div class="cuentas" id="cuentasBancarias"></div>
+
+        <div class="total">Total: <span id="totalPagar">RD$ 0</span></div>
+
+        <a class="boton-wsp" id="botonEnviar" target="_blank">Enviar pedido por WhatsApp</a>
+      </form>
+    </section>
   </div>
 
-  <section id="beneficios">
-    <h2>Beneficios del Aceite de Batana</h2>
-    <p>Regenera y fortalece el cabello dañado, estimula el crecimiento capilar y combate la caída. Rico en ácidos grasos esenciales y antioxidantes, también ayuda a hidratar y rejuvenecer la piel.</p>
-  </section>
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/18094254540?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Aceite%20de%20Batana" class="whatsapp-float" target="_blank">💬</a>
 
-  <section id="usos">
-    <h2>¿Cómo se usa?</h2>
-    <p>Aplicar directamente en el cuero cabelludo con un suave masaje. Puede usarse en mascarillas capilares, barba, pestañas o incluso como humectante facial y corporal.</p>
-  </section>
+  <footer>
+    © R&F Productos Integrales 2025 / Aceite de Batana - Todos los derechos reservados.
+  </footer>
 
-  <section id="presentacion">
-    <h2>Presentación del Producto</h2>
-    <p>Envase de 120 ml. Producto 100% natural, elaborado artesanalmente. Ideal para uso personal o como regalo saludable y práctico.</p>
-  </section>
+  <script>
+    const cantidad = document.getElementById('cantidad');
+    const totalPagar = document.getElementById('totalPagar');
+    const botonEnviar = document.getElementById('botonEnviar');
+    const entrega = document.getElementById('entrega');
+    const pago = document.getElementById('pago');
+    const cuentasDiv = document.getElementById('cuentasBancarias');
 
-  <a href="https://wa.me/18094254540"
+    function calcularTotal() {
+      const cant = parseInt(cantidad.value) || 0;
+      let precio = cant >= 6 ? 450 : 500; // corregido precio en RD$
+      let subtotal = cant * precio;
+      let extra = entrega.value === "A domicilio" ? 300 : 0;
+      let total = subtotal + extra;
+      totalPagar.textContent = `RD$ ${total}`;
+      return { total, subtotal, extra };
+    }
+
+    function mostrarCuentas() {
+      let cuenta = '';
+      switch (pago.value) {
+        case "Transferencia Banco Popular":
+          cuenta = "<strong>Banco Popular:</strong> 123-456789-0 a nombre de Batana SRL";
+          break;
+        case "Transferencia Banreservas":
+          cuenta = "<strong>Banreservas:</strong> 001-2345678-9 a nombre de Batana SRL";
+          break;
+        case "Transferencia BHD":
+          cuenta = "<strong>BHD:</strong> 402-9876543-2 a nombre de Batana SRL";
+          break;
+        default:
+          cuenta = "";
+      }
+      cuentasDiv.innerHTML = cuenta;
+      cuentasDiv.style.display = cuenta ? "block" : "none";
+    }
+
+    function actualizarEnlaceWhatsApp() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const direccion = document.getElementById('direccion').value.trim();
+      const cant = cantidad.value;
+      const formaPago = pago.value;
+      const formaEntrega = entrega.value;
+      const { total, subtotal, extra } = calcularTotal();
+
+      let mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.%0A%0A`;
+      mensaje += `Dirección: ${direccion}%0A`;
+      mensaje += `Forma de entrega: ${formaEntrega}%0A`;
+      mensaje += `Forma de pago: ${formaPago}%0A`;
+      if (extra > 0) mensaje += `Costo de envío: RD$ ${extra}%0A`;
+      mensaje += `Subtotal: RD$ ${subtotal}%0A`;
+      mensaje += `Total a pagar: RD$ ${total}`;
+
+      const url = `https://wa.me/18094254540?text=${mensaje}`;
+      botonEnviar.href = url;
+    }
+
+    document.getElementById('formularioPedido').addEventListener('input', () => {
+      calcularTotal();
+      mostrarCuentas();
+      actualizarEnlaceWhatsApp();
+    });
+  </script>
+
+</body>
+</html>
