@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aceite Batana</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding-top: 60px;
+      padding-top: 80px; /* Aumentado para evitar que el header tape el título */
       background-color: #fefefe;
       color: #333;
       line-height: 1.6;
@@ -20,21 +24,24 @@
       width: 100%;
       background-color: #4CAF50;
       color: white;
-      padding: 15px 0;
+      padding: 10px 0;
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 15px;
+      padding: 0 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
     nav a:hover {
@@ -49,6 +56,7 @@
 
     h1, h2 {
       color: #4CAF50;
+      margin-top: 0;
     }
 
     img {
@@ -80,7 +88,6 @@
       scroll-behavior: smooth;
     }
 
-    /* WhatsApp flotante (opcional) */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -94,6 +101,17 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
+    @media (max-width: 480px) {
+      nav {
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .whatsapp-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -141,11 +159,10 @@
 
   <section id="compra">
     <h2>Compra el Aceite de Batana</h2>
-    <a class="whatsapp-btn" href="https://wa.me/18094254540?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">¡Comprar por WhatsApp!</a>
+    <a class="whatsapp-btn" href="https://wa.me/1XXXXXXXXXX?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">¡Comprar por WhatsApp!</a>
   </section>
 
-  <!-- Botón flotante de WhatsApp (opcional) -->
-  <a class="whatsapp-float" href="https://wa.me/18094254540?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">💬</a>
+  <a class="whatsapp-float" href="https://wa.me/1XXXXXXXXXX?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">💬</a>
 
 </body>
 </html>
