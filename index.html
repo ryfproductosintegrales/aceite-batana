@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aceite de Batana</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aceite Batana</title>
   <style>
-    :root {
-      --color-primario: #003366;
-      --color-secundario: #f4f4f4;
-      --color-texto: #333;
-      --color-menu: white;
-      --color-boton: #25D366;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: var(--color-secundario);
-      color: var(--color-texto);
+      margin: 0;
+      padding-top: 60px;
+      background-color: #fefefe;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--color-primario);
-      color: var(--color-menu);
-      padding: 15px 30px;
       position: fixed;
       top: 0;
       width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 0;
       z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
     nav a {
-      color: var(--color-menu);
-      margin-left: 20px;
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
@@ -51,333 +41,111 @@
       text-decoration: underline;
     }
 
-    .contenedor {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-  font-family: sans-serif;
-  line-height: 1.6;
-}
-
-section {
-  margin-bottom: 40px;
-}
-    h2 {
-      margin-bottom: 20px;
-      font-size: 28px;
-      color: var(--color-primario);
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
-    p {
+    h1, h2 {
+      color: #4CAF50;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .whatsapp-btn {
+      display: block;
+      width: max-content;
+      margin: 30px auto;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
       font-size: 18px;
-      line-height: 1.6;
+      border-radius: 5px;
+      text-align: center;
     }
 
-    .boton-wsp {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-</style>
+    /* WhatsApp flotante (opcional) */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
 
+  </style>
 </head>
 <body>
-    
-<div class="contenedor">
-  <section id="inicio">
-    <h2>Inicio</h2>
-    <p>
-      Bienvenido a nuestra página oficial del Aceite de Batana. Aquí encontrarás toda la información sobre este producto natural que transforma tu cabello.
-    </p>
-    <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
+
+  <header>
+    <nav>
+      <a href="#descripcion">Descripción</a>
+      <a href="#presentaciones">Precios</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#uso">Modo de uso</a>
+      <a href="#compra">Compra</a>
+    </nav>
+  </header>
+
+  <section id="descripcion">
+    <h1>Aceite de Batana</h1>
+    <img src="https://ryfproductosintegrales.github.io/aceite-batana/img/aceite-batana.jpg" alt="Aceite Batana">
+    <p>El aceite de batana es un producto natural extraído de la palma americana, utilizado tradicionalmente por la comunidad indígena Miskita en Honduras. Este aceite es rico en ácidos grasos esenciales y antioxidantes, lo que lo convierte en un excelente aliado para el cuidado del cabello y la piel.</p>
   </section>
 
-  <section id="como-funciona">
-    <h2>Cómo Funciona</h2>
-    <p>
-      El aceite penetra profundamente en el cuero cabelludo, nutriendo la raíz y restaurando la vitalidad del cabello.
-    </p>
-    <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
+  <section id="presentaciones">
+    <h2>Presentaciones y Precios</h2>
+    <ul>
+      <li>60 ml – RD$ 500 (detal) / RD$ 450 (por mayor)</li>
+      <li>120 ml – RD$ 850 (detal) / RD$ 765 (por mayor)</li>
+      <li>240 ml – RD$ 1,500 (detal) / RD$ 1,350 (por mayor)</li>
+    </ul>
+  </section>
 
-    <article class="subsection">
-      <h3>¿Qué es el Aceite de Batana?</h3>
-      <p><strong>El secreto de la palmera americana para nutrir y fortalecer tu cabello</strong></p>
-      <p>
-        Nuestro Aceite de Batana es un aceite vegetal 100% puro, obtenido por prensado en frío de los frutos de la palmera americana <em>Elaeis oleifera</em>.
-      </p>
-      <p>
-        Originario de la región Moskitia en Honduras, es conocido por los pueblos indígenas miskitos como “aceite milagroso” debido a sus múltiples beneficios para la piel y el cabello.
-      </p>
-      <p>
-        Enriquecido con ácidos grasos esenciales (omega-6 y omega-9) y vitamina E, nutre e hidrata profundamente desde la raíz hasta las puntas. Esta rica composición actúa reparando el cabello seco y dañado, mientras fortalece las hebras y aporta un brillo natural incomparable.
-      </p>
-    </article>
+  <section id="beneficios">
+    <h2>Beneficios</h2>
+    <ul>
+      <li>Fortalece el cabello desde la raíz.</li>
+      <li>Previene y reduce la caída del cabello.</li>
+      <li>Repara puntas abiertas.</li>
+      <li>Estimula el crecimiento del cabello.</li>
+      <li>Regenera el cuero cabelludo dañado.</li>
+    </ul>
+  </section>
 
-    <article class="subsection">
-      <h3>Ingrediente Clave</h3>
-      <p>
-        <strong>100% Aceite puro de Batana (Elaeis oleifera).</strong><br>
-        Prensado en frío.<br>
-        Contiene naturalmente vitamina E y ácidos grasos Omega-6/9.<br>
-        Sin aditivos ni químicos.
-      </p>
-   
-  <p>El Aceite de Batana se distingue por su pureza y riqueza natural. Entre sus componentes más importantes destacan:</p>
-  <ul>
-    <li><strong>Ácido oleico (Omega-9)</strong> y <strong>ácido linoleico (Omega-6):</strong> Grasas esenciales que nutren e hidratan el cabello en profundidad.</li>
-    <li><strong>Vitamina E:</strong> Poderoso antioxidante que repara la fibra capilar y protege contra el daño oxidativo.</li>
-    <li><strong>Tocoferoles (Vitaminas A y E)</strong> y <strong>fitoesteroles:</strong> Nutrientes antioxidantes que cuidan el cuero cabelludo y ayudan a proteger el cabello de los rayos UV y la contaminación.</li>
-    <li><strong>Fórmula 100% natural:</strong> Sin parabenos ni aditivos químicos, prensado en frío y certificado vegano, garantizando un producto limpio y de alta calidad.</li>
-  </ul>
-</div>
+  <section id="uso">
+    <h2>Modo de Uso</h2>
+    <p>Aplicar una pequeña cantidad de aceite sobre el cuero cabelludo y el cabello limpio. Masajear suavemente y dejar actuar por al menos 30 minutos. Para mejores resultados, usar 2-3 veces por semana.</p>
+  </section>
 
-<div class="subsection">
-  <h3>Beneficios del Aceite de Batana</h3>
+  <section id="compra">
+    <h2>Compra el Aceite de Batana</h2>
+    <a class="whatsapp-btn" href="https://wa.me/18094254540?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">¡Comprar por WhatsApp!</a>
+  </section>
 
-  <blockquote>
-    “Promueve el crecimiento del cabello y reduce la caída.”<br>
-    “Repara el daño capilar, dejándolo suave y brillante.”<br>
-    “Nutre profundamente: rico en vitaminas (E) y ácidos grasos esenciales.”<br>
-    “Mejora la hidratación de la piel y protege contra agresiones ambientales.”
-  </blockquote>
-
-  <p>Al incorporar Aceite de Batana en tu rutina de cuidado capilar, disfrutarás de beneficios únicos:</p>
-  <ul>
-    <li><strong>Hidratación profunda:</strong> Retiene la humedad en cada hebra, dejando el cabello suave y sedoso. Ideal para melenas secas, rizadas o maltratadas.</li>
-    <li><strong>Fortalecimiento desde la raíz:</strong> Los antioxidantes naturales (p. ej. vitamina E) protegen los folículos y reducen el quiebre capilar, promoviendo un crecimiento más fuerte.</li>
-    <li><strong>Brillo y suavidad natural:</strong> Con el uso continuo, el cabello opaco recupera luminosidad y manejabilidad, combatiendo el frizz y otorgando un aspecto saludable.</li>
-    <li><strong>Reducción de la caída:</strong> Al cuidar el cuero cabelludo y nutrir la raíz, se ayuda a prevenir la caída excesiva y se mantiene la integridad de las hebras.</li>
-    <li><strong>Protección ambiental:</strong> Su fórmula antioxidante defiende el cabello de daños externos (sol, contaminación, planchas), manteniéndolo resistente al deterioro diario.</li>
-  </ul>
-</div>
-<div class="subsection">
-  <h3>Modo de Uso</h3>
-  <p>El Aceite de Batána puede usarse de diferentes formas, según tu tipo de cabello y tus necesidades específicas. Aquí te explicamos cómo aplicarlo correctamente para obtener los mejores resultados:</p>
-
-  <h4>🌿 1. Como tratamiento capilar profundo (1–2 veces por semana)</h4>
-  <ul>
-    <li>Ideal para cabellos secos, dañados o con frizz.</li>
-    <li>Calienta ligeramente una pequeña cantidad del aceite (opcional, a baño María) para facilitar la absorción.</li>
-    <li>Aplica sobre el cuero cabelludo y el largo del cabello seco o húmedo, masajeando suavemente con la yema de los dedos.</li>
-    <li>Deja actuar entre 30 minutos y 2 horas. Para un tratamiento intensivo, puedes dejarlo actuar toda la noche usando un gorro térmico o toalla.</li>
-    <li>Lava tu cabello con shampoo suave hasta retirar completamente el aceite. No es necesario usar acondicionador.</li>
-  </ul>
-
-  <h4>💧 2. Como hidratante sin enjuague (leave-in)</h4>
-  <ul>
-    <li>Ideal para controlar el frizz y dar brillo diario.</li>
-    <li>Aplica 2–3 gotas en la palma de la mano y frótalas para calentar el aceite.</li>
-    <li>Pasa las manos suavemente por las puntas y el largo del cabello seco o ligeramente húmedo.</li>
-    <li>Peina como de costumbre. No necesita enjuague.</li>
-  </ul>
-
-  <h4>💆‍♀️ 3. Masaje capilar estimulante (una vez por semana)</h4>
-  <ul>
-    <li>Ayuda a fortalecer la raíz y estimular el crecimiento.</li>
-    <li>Coloca unas gotas directamente en el cuero cabelludo.</li>
-    <li>Masajea con movimientos circulares durante 5–10 minutos para activar la circulación.</li>
-    <li>Deja actuar al menos 30 minutos antes de lavar.</li><br>
-  </ul>
-
-  <h4>📌 Recomendaciones:</h4><br>
-  <ul>
-    <li>Úsalo con constancia para ver resultados visibles en 2–4 semanas.</li>
-    <li>Apto para todo tipo de cabello: liso, rizado, afro, teñido o natural.</li>
-    <li>También puede aplicarse en cejas, barba o pestañas con cuidado.</li>
-  </ul>
-</div>
-</section>
-
-
-   <section id="ofertas" class="section bg-light">
-  <div class="container">
-    <h2>Ofertas</h2>
-    <p>Elige la cantidad que deseas y aprovecha nuestras tarifas especiales por volumen:</p>
-
-    <div class="pricing-table">
-      <div class="pricing-option">
-        <h3>Precio Detalle</h3>
-        <p>1 a 5 frascos</p>
-        <p class="price"><strong>RD$500 c/u</strong></p>
-      </div>
-
-      <div class="pricing-option">
-        <h3>Precio al Por Mayor</h3>
-        <p>6 frascos o más</p>
-        <p class="price"><strong>RD$450 c/u</strong></p>
-      </div>
-    </div>
-
-    <div class="cta-button" style="margin-top: 20px;">
-      <a href="https://wa.me/18094254540?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Aceite%20de%20Batana.%20Por%20favor%20indíqueme%20disponibilidad%20y%20formas%20de%20pago." target="_blank" class="btn btn-success">
-        🛒 Hacer Pedido por WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-  <div class="promo-box" style="margin-top: 40px; padding: 20px; background-color: #fff3cd; border-left: 5px solid #ffc107;">
-  <h3>🎉 Promoción de Lanzamiento</h3>
-  <ul>
-    <li><strong>50% de descuento</strong> en tu primer pedido.</li>
-    <li><strong>Envío exprés en 24 horas</strong> y envío <strong>gratis</strong>.</li>
-    <li><strong>Regalo:</strong> Kit de Cuidado Capilar (muestra gratis de producto) con cada compra.</li>
-  </ul>
-  <p>Para realizar tu pedido de inmediato, utiliza nuestro botón de WhatsApp personalizado:</p>
-  <div style="margin-top: 10px;">
-    <a href="https://wa.me/18094254540?text=Hola,%20Haz%20tu%20pedido%20ahora.%20Estoy%20interesado(a)%20en%20la%20promoción%20de%20lanzamiento%20del%20Aceite%20de%20Batana." target="_blank" class="btn btn-warning">
-      📲 Haz tu pedido ahora
-    </a>
-  </div>
-</div>
-
-<section id="precios" class="section">
-  <div class="container">
-    <h2>El tratamiento perfecto para ti</h2>
-    <p>Elige el plan que más se ajuste a tus necesidades y comienza a transformar tu cabello desde hoy.</p>
-
-    <div class="treatment-options" style="display: flex; gap: 20px; flex-wrap: wrap;">
-      
-      <!-- Opción 1 -->
-      <div class="card" style="flex: 1; min-width: 280px; border: 1px solid #ccc; border-radius: 8px; padding: 16px; text-align: center;">
-        <img src="ruta-imagen-1.jpg" alt="1 Frasco - 15 días" style="width: 100%; height: auto; border-radius: 8px;">
-        <h3>1 Frasco – Tratamiento de 15 días</h3>
-        <p><strong>RD$500</strong></p>
-        <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
-      </div>
-
-      <!-- Opción 2 -->
-      <div class="card" style="flex: 1; min-width: 280px; border: 1px solid #ccc; border-radius: 8px; padding: 16px; text-align: center;">
-        <img src="ruta-imagen-2.jpg" alt="3 Frascos - 45 días" style="width: 100%; height: auto; border-radius: 8px;">
-        <h3>3 Frascos – Tratamiento de 45 días</h3>
-        <p><strong>RD$1,350</strong> (RD$450 c/u)</p>
-        <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
-      </div>
-
-      <!-- Opción 3 -->
-      <div class="card" style="flex: 1; min-width: 280px; border: 1px solid #ccc; border-radius: 8px; padding: 16px; text-align: center;">
-        <img src="ruta-imagen-3.jpg" alt="6 Frascos - 90 días" style="width: 100%; height: auto; border-radius: 8px;">
-        <h3>6 Frascos – Tratamiento de 90 días</h3>
-        <p><strong>RD$2,700</strong> (Precio por mayor)</p>
-        <a href="#pedido" class="btn btn-primary">📦 Hacer Pedido</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-  
-  
-    <section id="pedido" class="section bg-light">
-  <div class="container">
-    <h2>Pedido</h2>
-    <p>Completa este formulario para procesar tu compra y coordinar el método de pago y entrega.</p>
-    <!-- aquí sigue tu formulario -->
-
-      <form id="formularioPedido">
-        <label>Nombre completo:</label>
-        <input type="text" id="nombre" required />
-
-        <label>Dirección:</label>
-        <input type="text" id="direccion" required />
-
-        <label>Cantidad de frascos:</label>
-        <input type="number" id="cantidad" min="1" required />
-
-        <label>Forma de entrega:</label>
-        <select id="entrega">
-          <option value="A domicilio">A domicilio (+RD$300)</option>
-          <option value="Recoge en tienda">Recoge en tienda</option>
-        </select>
-
-        <label>Forma de pago:</label>
-        <select id="pago">
-          <option value="Efectivo">Efectivo</option>
-          <option value="Transferencia Banco Popular">Transferencia - Banco Popular</option>
-          <option value="Transferencia Banreservas">Transferencia - Banreservas</option>
-          <option value="Transferencia BHD">Transferencia - BHD</option>
-        </select>
-
-        <div class="cuentas" id="cuentasBancarias"></div>
-
-        <div class="total">Total: <span id="totalPagar">RD$ 0</span></div>
-
-        <a class="boton-wsp" id="botonEnviar" target="_blank">Enviar pedido por WhatsApp</a>
-      </form>
-    </section>
-  </div>
-
-  <footer>
-    © R&F Productos Integrales 2025 / Aceite de Batana - Todos los derechos reservados.
-  </footer>
-
-  <script>
-    const cantidad = document.getElementById('cantidad');
-    const totalPagar = document.getElementById('totalPagar');
-    const botonEnviar = document.getElementById('botonEnviar');
-    const entrega = document.getElementById('entrega');
-    const pago = document.getElementById('pago');
-    const cuentasDiv = document.getElementById('cuentasBancarias');
-
-    function calcularTotal() {
-      const cant = parseInt(cantidad.value) || 0;
-      let precio = cant >= 6 ? 7 : 10;
-      let subtotal = cant * precio;
-      let extra = entrega.value === "A domicilio" ? 300 : 0;
-      let total = subtotal + extra;
-      totalPagar.textContent = `RD$ ${total}`;
-      return { total, subtotal, extra };
-    }
-
-    function mostrarCuentas() {
-      let cuenta = '';
-      switch (pago.value) {
-        case "Transferencia Banco Popular":
-          cuenta = "<strong>Banco Popular:</strong> 123-456789-0 a nombre de Batana SRL";
-          break;
-        case "Transferencia Banreservas":
-          cuenta = "<strong>Banreservas:</strong> 001-2345678-9 a nombre de Batana SRL";
-          break;
-        case "Transferencia BHD":
-          cuenta = "<strong>BHD:</strong> 402-9876543-2 a nombre de Batana SRL";
-          break;
-        default:
-          cuenta = "";
-      }
-      cuentasDiv.innerHTML = cuenta;
-      cuentasDiv.style.display = cuenta ? "block" : "none";
-    }
-
-    function actualizarEnlaceWhatsApp() {
-      const nombre = document.getElementById('nombre').value.trim();
-      const direccion = document.getElementById('direccion').value.trim();
-      const cant = cantidad.value;
-      const formaPago = pago.value;
-      const formaEntrega = entrega.value;
-      const { total, subtotal, extra } = calcularTotal();
-
-      let mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.%0A%0A`;
-      mensaje += `Dirección: ${direccion}%0A`;
-      mensaje += `Forma de entrega: ${formaEntrega}%0A`;
-      mensaje += `Forma de pago: ${formaPago}%0A`;
-      if (extra > 0) mensaje += `Costo de envío: RD$ ${extra}%0A`;
-      mensaje += `Subtotal: RD$ ${subtotal}%0A`;
-      mensaje += `Total a pagar: RD$ ${total}`;
-
-      const url = `https://wa.me/18094254540?text=${mensaje}`;
-      botonEnviar.href = url;
-    }
-
-    document.getElementById('formularioPedido').addEventListener('input', () => {
-      calcularTotal();
-      mostrarCuentas();
-      actualizarEnlaceWhatsApp();
-    });
-  </script>
+  <!-- Botón flotante de WhatsApp (opcional) -->
+  <a class="whatsapp-float" href="https://wa.me/18094254540?text=Hola,%20quiero%20comprar%20el%20aceite%20Batana" target="_blank">💬</a>
 
 </body>
 </html>
