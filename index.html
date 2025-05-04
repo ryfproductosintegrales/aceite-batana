@@ -151,7 +151,7 @@ header nav a:not(:last-child)::after {
       font-size: 16px;
     }
 
-    /* Ofertas */
+ /* Ofertas */
     .section.bg-light {
       background-color: #fafafa;
       padding: 40px 20px;
@@ -167,21 +167,105 @@ header nav a:not(:last-child)::after {
     }
     .price { font-size: 20px; margin-top: 10px; }
 
-    /* Cards de tratamiento */
-    .treatment-options {
-      display: flex; flex-wrap: wrap; gap: 20px;
-    }
-    .treatment-options .card {
-      flex: 1; min-width: 280px;
-      background: #fff; padding: 16px; text-align: center;
-      border: 1px solid #ccc; border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .treatment-options .card img {
-      width: 100%; height: auto; border-radius: 8px;
-      margin-bottom: 12px;
-      loading: lazy;
-    }
+
+
+    
+   /* Ofertas: mejora de centrado y legibilidad */
+.pricing-option {
+  position: relative;      /* Para poder superponer texto sobre fondo */
+  overflow: hidden;        /* Recorta cualquier exceso de la imagen */
+  text-align: center;      /* Centra títulos, párrafos y precios */
+}
+
+/* Si usas imágenes de fondo con ::before, este ejemplo aplica */
+.pricing-option::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('img/oferta-detalle.jpg') center/cover no-repeat; /* Ajusta ruta */
+  opacity: 0.5;            /* Tu nivel de opacidad */
+  z-index: 0;
+}
+
+/* Que todo el contenido quede encima de la imagen */
+.pricing-option > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fondo semitransparente para textos */
+.pricing-option h3,
+.pricing-option p,
+.pricing-option .price {
+  display: inline-block;              
+  background: rgba(255, 255, 255, 0.8); /* Blanco 80% opaco */
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* Asegura que el precio quede bien centrado */
+.pricing-option .price {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+
+   /* Cards de tratamiento */
+.treatment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Tarjeta individual */
+.treatment-options .card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;       /* ancho máximo para consistencia */
+  background: #fff;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Imagen dentro de la tarjeta */
+.treatment-options .card img {
+  width: 100%;
+  height: 180px;          /* altura fija */
+  object-fit: cover;      /* recorta y llena el contenedor */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: block;
+  loading: lazy;
+}
+
+/* Centrado de textos en la tarjeta */
+.treatment-options .card h3,
+.treatment-options .card p {
+  margin: 8px 0;
+  text-align: center;
+}
+
+/* Precio destacado */
+.treatment-options .card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 8px 0;
+}
+
+/* Ajuste en móvil: tarjetas de ancho completo */
+@media (max-width: 600px) {
+  .treatment-options .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
 
     /* Formulario */
     form {
@@ -456,9 +540,8 @@ header nav a:not(:last-child)::after {
       <div class="cta-button" style="margin-top:20px;">
        <a class="boton-wsp" href="#precios">
   <a class="boton-wsp" href="#precios">🛒 Hacer Pedido por WhatsApp</a>
-      </div>
-    </div>
-  </div>
+      
+   </div>
 </section>
 
 
