@@ -35,7 +35,9 @@
       background-color: var(--color-primario);
       color: var(--color-menu);
       padding: 10px 20px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
       flex-wrap: wrap; /* para que se apilen en móviles */
       gap: 15px;
       z-index: 1000;
@@ -65,6 +67,7 @@
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  overflow-x: auto; /* ✅ evita que se corte el contenido horizontalmente */
 }
   
     header nav a {
@@ -73,7 +76,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
-      padding: 0 8px;
+      padding: 4px 6px;
     }
 
 /* Agrega la barra entre enlaces */
@@ -212,7 +215,7 @@ header nav a:not(:last-child)::after {
  
     
 .logo-img {
-  max-width: 75px;
+  max-width: 50px;
   height: auto;
   background-color: white;
   padding: 5px;
@@ -243,7 +246,7 @@ header nav a:not(:last-child)::after {
   </header>
 
   <div class="contenedor">
-    <section id="inicio" style="margin-top: 0px;">
+    <section id="inicio" style="margin-top: -25px;">
       <div style="background: rgba(255, 255, 255, 0.85); border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); padding: 30px; backdrop-filter: blur(6px); max-width: 800px; margin: auto;">
       <h2>Inicio</h2>
       <p>
