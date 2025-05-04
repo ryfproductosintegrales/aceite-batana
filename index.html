@@ -210,6 +210,15 @@ header nav a:not(:last-child)::after {
       .contenedor { padding: 15px; }
     }
 
+/* Estilos para móviles (pantallas pequeñas) */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 15px; /* reduce el espacio */
+    flex-direction: column; /* si quieres apilar logo y menú */
+    gap: 10px; /* espacio entre logo y menú */
+  }
+
+    
     
 .logo-img {
   max-width: 75px;
