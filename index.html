@@ -426,29 +426,44 @@ header nav a:not(:last-child)::after {
 </section>
        
   <section id="ofertas" style="margin-top: -25px;">
-       <div class="bg-white bg-opacity-80 rounded-2xl shadow-2xl p-6 mb-6 border border-gray-300 backdrop-blur-sm">
-      <div style="background: rgba(255, 255, 255, 0.85); border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); padding: 30px; backdrop-filter: blur(6px); max-width: 800px; margin: auto;">
-   <h2 class="text-2xl font-bold mb-2">Ofertas</h2>
-
+  <div class="bg-white bg-opacity-80 rounded-2xl shadow-2xl p-6 mb-6 border border-gray-300 backdrop-blur-sm">
+    <div style="background: rgba(255, 255, 255, 0.85); border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); padding: 30px; backdrop-filter: blur(6px); max-width: 800px; margin: auto;">
+      <h2 class="text-2xl font-bold mb-2">Ofertas</h2>
       <p>Elige la cantidad que deseas y aprovecha nuestras tarifas especiales por volumen:</p>
       <div class="pricing-table">
-        <div class="pricing-option">
-          <h3>Precio Detalle</h3>
-          <p>1 a 5 frascos</p>
-          <p class="price"><strong>RD$500 c/u</strong></p>
+        
+        <!-- Caja 1 con imagen -->
+        <div class="pricing-option" style="position: relative; overflow: hidden;">
+          <img src="img/imagen2.png" alt="Precio Detalle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1;">
+          <div style="position: relative; z-index: 1; padding: 20px;">
+            <h3>Precio Detalle</h3>
+            <p>1 a 5 frascos</p>
+            <p class="price"><strong>RD$1300 c/u</strong></p>
+          </div>
         </div>
-        <div class="pricing-option">
-          <h3>Precio al Por Mayor</h3>
-          <p>6 frascos o más</p>
-          <p class="price"><strong>RD$450 c/u</strong></p>
+
+        <!-- Caja 2 con imagen -->
+        <div class="pricing-option" style="position: relative; overflow: hidden;">
+          <img src="img/imagen1.png" alt="Precio al Por Mayor" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1;">
+          <div style="position: relative; z-index: 1; padding: 20px;">
+            <h3>Precio al Por Mayor</h3>
+            <p>6 frascos o más</p>
+            <p class="price"><strong>RD$1000 c/u</strong></p>
+          </div>
         </div>
+
       </div>
       <div class="cta-button" style="margin-top:20px;">
-        <a class="boton-wsp" href="#precios">🛒 Hacer Pedido por WhatsApp</a>
-          
-        </a>
+       <a class="boton-wsp" href="#precios">
+  <i class="fa-solid fa-cart-shopping" style="margin-right:8px; font-size:18px;"></i>
+  Hacer Pedido por WhatsApp
+</a>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <section id="precios" style="margin-top: -25px;">
        <div class="bg-white bg-opacity-80 rounded-2xl shadow-2xl p-6 mb-6 border border-gray-300 backdrop-blur-sm">
@@ -458,21 +473,21 @@ header nav a:not(:last-child)::after {
       <p>Elige el plan que más se ajuste a tus necesidades:</p>
       <div class="treatment-options">
         <div class="card">
-          <img src="ruta-imagen-1.jpg" alt="1 Frasco">
+          <img src="imagen2.png" alt="1 Frasco">
           <h3>1 Frasco – 15 días</h3>
-          <p><strong>RD$500</strong></p>
+          <p><strong>RD$1,300</strong></p>
           <a href="#pedido" class="boton-wsp">📦 Pedido</a>
         </div>
         <div class="card">
-          <img src="ruta-imagen-2.jpg" alt="3 Frascos">
+          <img src="imagen1.png" alt="3 Frascos">
           <h3>3 Frascos – 45 días</h3>
-          <p><strong>RD$1,350</strong></p>
+          <p><strong>RD$3,600</strong></p>
           <a href="#pedido" class="boton-wsp">📦 Pedido</a>
         </div>
         <div class="card">
-          <img src="ruta-imagen-3.jpg" alt="6 Frascos">
+          <img src="imagen4.png" alt="6 Frascos">
           <h3>6 Frascos – 90 días</h3>
-          <p><strong>RD$2,700</strong></p>
+          <p><strong>RD$6,000</strong></p>
           <a href="#pedido" class="boton-wsp">📦 Pedido</a>
         </div>
       </div>
