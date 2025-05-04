@@ -68,11 +68,23 @@
 }
   
     header nav a {
+      position: relative;
       color: var(--color-menu);
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
+      padding: 0 8px;
     }
+
+/* Agrega la barra entre enlaces */
+.header-nav a:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: -6px;
+  color: var(--color-menu);
+}
+    
+   
     header nav a:hover {
       text-decoration: underline;
     }
@@ -216,7 +228,6 @@
   <!-- HEADER con logo y nav -->
   <header>
     <img src="img/logo-header.png" alt="Logo R&F Productos Integrales" class="logo-img">
-
 
 
     <nav>
