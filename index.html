@@ -246,7 +246,8 @@ header nav a:not(:last-child)::after {
     </nav>
   </header>
 
-  <div class="contenedor">
+  const main = document.querySelector(".contenido");
+
     <section id="inicio" style="margin-top: 100px;">
       <div style="background: rgba(255, 255, 255, 0.85); border-radius: 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); padding: 30px; backdrop-filter: blur(6px); max-width: 800px; margin: auto;">
       <h2>Inicio</h2>
@@ -552,5 +553,21 @@ header nav a:not(:last-child)::after {
     });
   </script>
 
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      const header = document.querySelector("header");
+      const main = document.querySelector("main");
+      if (header && main) {
+        main.style.marginTop = header.offsetHeight + "px";
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+        
 </body>
 </html>
