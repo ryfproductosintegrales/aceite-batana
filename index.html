@@ -212,60 +212,21 @@ header nav a:not(:last-child)::after {
 }
 
 
-   /* Cards de tratamiento */
-.treatment-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Tarjeta individual */
-.treatment-options .card {
-  flex: 1;
-  min-width: 280px;
-  max-width: 320px;       /* ancho máximo para consistencia */
-  background: #fff;
-  padding: 16px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Imagen dentro de la tarjeta */
-.treatment-options .card img {
-  width: 100%;
-  height: 180px;          /* altura fija */
-  object-fit: cover;      /* recorta y llena el contenedor */
-  border-radius: 8px;
-  margin-bottom: 12px;
-  display: block;
-  loading: lazy;
-}
-
-/* Centrado de textos en la tarjeta */
-.treatment-options .card h3,
-.treatment-options .card p {
-  margin: 8px 0;
-  text-align: center;
-}
-
-/* Precio destacado */
-.treatment-options .card .price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: center;
-  margin: 8px 0;
-}
-
-/* Ajuste en móvil: tarjetas de ancho completo */
-@media (max-width: 600px) {
-  .treatment-options .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin: 0 auto 20px;
-  }
-}
+  /* Cards de tratamiento */
+    .treatment-options {
+      display: flex; flex-wrap: wrap; gap: 20px;
+    }
+    .treatment-options .card {
+      flex: 1; min-width: 280px;
+      background: #fff; padding: 16px; text-align: center;
+      border: 1px solid #ccc; border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .treatment-options .card img {
+      width: 100%; height: auto; border-radius: 8px;
+      margin-bottom: 12px;
+      loading: lazy;
+    }
 
 
     /* Formulario */
