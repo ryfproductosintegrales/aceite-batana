@@ -226,8 +226,37 @@ header nav a:not(:last-child)::after {
       width: 100%; height: auto; border-radius: 8px;
       margin-bottom: 12px;
       loading: lazy;
+       display: block;
     }
 
+/* Centrado de textos en la tarjeta */
+.treatment-options .card h3,
+.treatment-options .card p {
+  margin: 8px 0;
+  text-align: center;
+}
+
+/* Precio destacado */
+.treatment-options .card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 8px 0;
+}
+
+/* Ajuste en móvil: tarjetas de ancho completo */
+@media (max-width: 600px) {
+  .treatment-options .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
+
+
+
+    
 
     /* Formulario */
     form {
