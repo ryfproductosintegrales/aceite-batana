@@ -340,7 +340,6 @@ header nav a:not(:last-child)::after {
 <body>
 
   
-  <!-- HEADER con logo y nav -->
   <header>
     <img src="img/logo-header.png" alt="Logo R&F Productos Integrales" class="logo-img">
 
@@ -357,7 +356,6 @@ header nav a:not(:last-child)::after {
   </header>
 
 
-<!-- Portada -->
 <section class="portada">
   <img src="img/batana.png" alt="Portada Aceite de Batana">
 </section>
@@ -383,7 +381,6 @@ header nav a:not(:last-child)::after {
     </p>
     <a class="boton-wsp" href="#precios">Comprar por WhatsApp</a>
 
-    <!-- Caja roja para Observación Importante -->
     <div style="margin-top: 40px; padding: 20px; background: #ffdddd; border-left: 6px solid red; border-radius: 10px;">
       <h4 style="margin-top: 0;">Observación Importante</h4>
       <p>
@@ -536,9 +533,8 @@ header nav a:not(:last-child)::after {
       <p>Elige la cantidad que deseas y aprovecha nuestras tarifas especiales por volumen:</p>
       <div class="pricing-table">
         
-        <!-- Caja 1 con imagen -->
         <div class="pricing-option" style="position: relative; overflow: hidden;">
-          <img src="img/imagen1.png" alt="Precio Detalle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+          <img src="img/oferta-detalle.jpg" alt="Precio Detalle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
           <div style="position: relative; z-index: 1; padding: 20px;">
             <h3>Precio Detalle</h3>
             <p>1 a 5 frascos</p>
@@ -546,9 +542,8 @@ header nav a:not(:last-child)::after {
           </div>
         </div>
 
-        <!-- Caja 2 con imagen -->
         <div class="pricing-option" style="position: relative; overflow: hidden;">
-          <img src="img/imagen1.png" alt="Precio al Por Mayor" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+          <img src="img/oferta-detalle.jpg" alt="Precio al Por Mayor" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
           <div style="position: relative; z-index: 1; padding: 20px;">
             <h3>Precio al Por Mayor</h3>
             <p>6 frascos o más</p>
@@ -575,19 +570,19 @@ header nav a:not(:last-child)::after {
           <img src="img/imagen2.png" alt="1 Frasco">
           <h3>1 Frasco – 15 días</h3>
           <p><strong>RD$1,300</strong></p>
-          <a href="#pedido" class="boton-wsp">📦 Pedido</a>
+          <a href="#pedido" class="boton-wsp set-cantidad" data-cantidad="1">📦 Pedido</a>
         </div>
         <div class="card">
           <img src="img/imagen1.png" alt="3 Frascos">
           <h3>3 Frascos – 45 días</h3>
           <p><strong>RD$3,600</strong></p>
-          <a href="#pedido" class="boton-wsp">📦 Pedido</a>
+          <a href="#pedido" class="boton-wsp set-cantidad" data-cantidad="3">📦 Pedido</a>
         </div>
         <div class="card">
           <img src="img/batana7.png" alt="6 Frascos">
           <h3>6 Frascos – 90 días</h3>
           <p><strong>RD$6,000</strong></p>
-          <a href="#pedido" class="boton-wsp">📦 Pedido</a>
+          <a href="#pedido" class="boton-wsp set-cantidad" data-cantidad="6">📦 Pedido</a>
         </div>
       </div>
     </section>
@@ -600,18 +595,32 @@ header nav a:not(:last-child)::after {
 
       <p>Completa este formulario para procesar tu compra y coordinar método de pago y entrega.</p>
       <form id="formularioPedido">
-        <label>Nombre completo:</label>
+        <label for="nombre">Nombre completo:</label>
         <input type="text" id="nombre" required />
-        <label>Dirección:</label>
-        <input type="text" id="direccion" required />
-        <label>Cantidad de frascos:</label>
-        <input type="number" id="cantidad" min="1" required />
-        <label>Forma de entrega:</label>
+        
+        <label for="entrega">Forma de entrega:</label>
         <select id="entrega">
-          <option value="A domicilio">A domicilio (+RD$300)</option>
+          <option value="A domicilio">A domicilio</option>
           <option value="Recoge en tienda">Recoge en tienda</option>
         </select>
-        <label>Forma de pago:</label>
+        
+        <label for="direccion" id="labelDireccion">Dirección:</label>
+        <input type="text" id="direccion" required />
+        
+        <label for="zona">Zona / Municipio:</label>
+        <select id="zona">
+          <option value="">Selecciona tu zona...</option>
+          <option value="DN">Distrito Nacional</option>
+          <option value="SDE">Santo Domingo Este</option>
+          <option value="SDN">Santo Domingo Norte</option>
+          <option value="SDO">Santo Domingo Oeste</option>
+          <option value="Resto del País">Resto del País</option>
+        </select>
+        
+        <label for="cantidad">Cantidad de frascos:</label>
+        <input type="number" id="cantidad" min="1" required />
+        
+        <label for="pago">Forma de pago:</label>
         <select id="pago">
           <option value="Efectivo">Efectivo</option>
           <option value="Transferencia Banco Popular">Transferencia - Banco Popular</option>
@@ -625,7 +634,6 @@ header nav a:not(:last-child)::after {
     </section>
   </div>
 
-  <!-- WhatsApp flotante -->
   <a href="https://wa.me/18094254540?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Aceite%20de%20Batana." class="whatsapp-float" target="_blank">💬</a>
 
   <footer>
@@ -647,27 +655,52 @@ header nav a:not(:last-child)::after {
 
 
   <script>
-    // tu script de cálculo y actualización de WhatsApp, sin cambios
-    const cantidad = document.getElementById('cantidad');
+    // tu script de cálculo y actualización de WhatsApp
+    const cantidadInput = document.getElementById('cantidad');
     const totalPagar = document.getElementById('totalPagar');
     const botonEnviar = document.getElementById('botonEnviar');
-    const entrega = document.getElementById('entrega');
-    const pago = document.getElementById('pago');
+    const entregaSelect = document.getElementById('entrega');
+    const pagoSelect = document.getElementById('pago');
     const cuentasDiv = document.getElementById('cuentasBancarias');
+    const direccionInput = document.getElementById('direccion');
+    const zonaSelect = document.getElementById('zona');
+    const labelDireccion = document.getElementById('labelDireccion');
+
+    // Precios de los frascos
+    const PRECIO_DETALLE = 1300; // 1 a 5 frascos (excepto 3)
+    const PRECIO_MAYOR = 1000;  // 6 frascos o más
 
     function calcularTotal() {
-      const cant = parseInt(cantidad.value) || 0;
-      let precio = cant >= 6 ? 450 : 500;
-      let subtotal = cant * precio;
-      let extra = entrega.value === "A domicilio" ? 300 : 0;
-      let total = subtotal + extra;
+      const cant = parseInt(cantidadInput.value) || 0;
+      let subtotal = 0; // Inicializamos subtotal
+
+      if (cant === 3) {
+        subtotal = 3600; // Precio especial para 3 frascos
+      } else if (cant >= 6) {
+        subtotal = cant * PRECIO_MAYOR; // Precio al por mayor para 6 o más
+      } else {
+        subtotal = cant * PRECIO_DETALLE; // Precio normal para 1, 2, 4, 5 frascos
+      }
+
+      let costoEnvio = 0;
+
+      if (entregaSelect.value === "A domicilio") {
+        const zonaSeleccionada = zonaSelect.value;
+        if (["DN", "SDE", "SDN", "SDO"].includes(zonaSeleccionada)) {
+          costoEnvio = 300;
+        } else if (zonaSeleccionada === "Resto del País") {
+          costoEnvio = 600;
+        }
+      }
+
+      let total = subtotal + costoEnvio;
       totalPagar.textContent = `RD$ ${total}`;
-      return { total, subtotal, extra };
+      return { total, subtotal, costoEnvio };
     }
 
     function mostrarCuentas() {
       let cuenta = '';
-      switch (pago.value) {
+      switch (pagoSelect.value) {
         case "Transferencia Banco Popular":
           cuenta = "<strong>Banco Popular:</strong> 123-456789-0 a nombre de Batana SRL"; break;
         case "Transferencia Banreservas":
@@ -681,28 +714,116 @@ header nav a:not(:last-child)::after {
 
     function actualizarEnlaceWhatsApp() {
       const nombre = document.getElementById('nombre').value.trim();
-      const direccion = document.getElementById('direccion').value.trim();
-      const cant = cantidad.value;
-      const formaPago = pago.value;
-      const formaEntrega = entrega.value;
-      const { total, subtotal, extra } = calcularTotal();
+      const direccion = direccionInput.value.trim();
+      const cant = cantidadInput.value;
+      const formaPago = pagoSelect.value;
+      const formaEntrega = entregaSelect.value;
+      const zona = zonaSelect.value;
+      const { total, subtotal, costoEnvio } = calcularTotal();
 
-      let mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.%0A%0A`;
-      mensaje += `Dirección: ${direccion}%0A`;
-      mensaje += `Forma de entrega: ${formaEntrega}%0A`;
-      mensaje += `Forma de pago: ${formaPago}%0A`;
-      if (extra > 0) mensaje += `Costo de envío: RD$ ${extra}%0A`;
-      mensaje += `Subtotal: RD$ ${subtotal}%0A`;
-      mensaje += `Total a pagar: RD$ ${total}`;
+      // Validación para campos obligatorios
+      let isValid = true;
+      if (nombre === '') {
+          isValid = false;
+      }
+      if (formaEntrega === "A domicilio") {
+          if (direccion === '') {
+              isValid = false;
+          }
+          if (zona === '') { // Validar que se haya seleccionado una zona
+              isValid = false;
+          }
+      }
+      if (cant === '' || parseInt(cant) <= 0) { // Validar cantidad
+          isValid = false;
+      }
 
-      botonEnviar.href = `https://wa.me/18094254540?text=${mensaje}`;
+      if (isValid) {
+          let mensaje = `Hola, mi nombre es ${nombre}. Quiero pedir ${cant} frasco(s) del Aceite de Batana.\n\n`;
+          if (formaEntrega === "A domicilio") {
+              mensaje += `Dirección: ${direccion}\n`;
+              mensaje += `Zona/Municipio: ${zona}\n`;
+          }
+          mensaje += `Forma de entrega: ${formaEntrega}\n`;
+          mensaje += `Forma de pago: ${formaPago}\n`;
+          if (costoEnvio > 0) mensaje += `Costo de envío: RD$ ${costoEnvio}\n`;
+          mensaje += `Subtotal: RD$ ${subtotal}\n`;
+          mensaje += `Total a pagar: RD$ ${total}`;
+
+          botonEnviar.href = `https://wa.me/18094254540?text=${encodeURIComponent(mensaje)}`;
+          botonEnviar.style.pointerEvents = 'auto';
+          botonEnviar.style.opacity = '1';
+      } else {
+          botonEnviar.href = '#';
+          botonEnviar.style.pointerEvents = 'none';
+          botonEnviar.style.opacity = '0.5';
+      }
     }
 
+    function toggleDireccionAndZona() {
+        if (entregaSelect.value === "Recoge en tienda") {
+            direccionInput.style.display = 'none';
+            labelDireccion.style.display = 'none';
+            direccionInput.required = false;
+            zonaSelect.style.display = 'none';
+            zonaSelect.required = false;
+            zonaSelect.value = ''; // Limpiar la selección de zona si no es a domicilio
+        } else {
+            direccionInput.style.display = 'block';
+            labelDireccion.style.display = 'block';
+            direccionInput.required = true;
+            zonaSelect.style.display = 'block';
+            zonaSelect.required = true;
+        }
+        calcularTotal(); // Recalcular al cambiar la forma de entrega
+        actualizarEnlaceWhatsApp();
+    }
+
+    // --- NUEVA FUNCIONALIDAD: PRE-RELLENAR CANTIDAD Y SCROLL ---
+    document.querySelectorAll('.set-cantidad').forEach(button => {
+        button.addEventListener('click', function(event) {
+            // Evitar que el href por defecto (ir a #pedido) haga un salto brusco si ya estamos en la sección
+            event.preventDefault(); 
+            
+            const cantidad = this.dataset.cantidad; // Obtiene el valor de data-cantidad
+            cantidadInput.value = cantidad; // Asigna la cantidad al input
+
+            // Desplaza la vista al formulario de pedido
+            document.getElementById('pedido').scrollIntoView({
+                behavior: 'smooth' // Desplazamiento suave
+            });
+
+            // Dispara manualmente el evento 'input' en el campo de cantidad
+            // Esto asegura que los cálculos y la validación de WhatsApp se actualicen
+            const inputEvent = new Event('input', { bubbles: true });
+            cantidadInput.dispatchEvent(inputEvent);
+        });
+    });
+    // --- FIN NUEVA FUNCIONALIDAD ---
+
+
+    // Event listeners
     document.getElementById('formularioPedido').addEventListener('input', () => {
       calcularTotal();
       mostrarCuentas();
       actualizarEnlaceWhatsApp();
     });
+    
+    // Escuchar el cambio en la forma de entrega
+    entregaSelect.addEventListener('change', toggleDireccionAndZona);
+    zonaSelect.addEventListener('change', () => {
+        calcularTotal();
+        actualizarEnlaceWhatsApp();
+    });
+
+    // Inicializar al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        toggleDireccionAndZona(); // Para ocultar/mostrar campos al cargar
+        calcularTotal();
+        mostrarCuentas();
+        actualizarEnlaceWhatsApp();
+    });
+
   </script>
 
   <script>
@@ -714,12 +835,5 @@ header nav a:not(:last-child)::after {
       }
     });
   </script>
-</body>
-</html>
-
-
-
-
-        
 </body>
 </html>
