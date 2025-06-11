@@ -171,46 +171,45 @@ header nav a:not(:last-child)::after {
 
 
     
-   /* Ofertas: mejora de centrado y legibilidad */
-.pricing-option {
-  position: relative;      /* Para poder superponer texto sobre fondo */
-  overflow: hidden;        /* Recorta cualquier exceso de la imagen */
-  text-align: center;      /* Centra títulos, párrafos y precios */
-}
-
-/* Si usas imágenes de fondo con ::before, este ejemplo aplica */
-.pricing-option::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('img/oferta-detalle.jpg') center/cover no-repeat; /* Ajusta ruta */
-  opacity: 0.5;            /* Tu nivel de opacidad */
-  z-index: 0;
-}
-
-/* Que todo el contenido quede encima de la imagen */
-.pricing-option > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Fondo semitransparente para textos */
-.pricing-option h3,
-.pricing-option p,
-.pricing-option .price {
-  display: block;              
-  background: rgba(255, 255, 255, 0.8); /* Blanco 80% opaco */
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin: 8px 0;
-  text-align: center; 
-}
-
-/* Asegura que el precio quede bien centrado */
-.pricing-option .price {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
+  /* Ofertas */
+   .section.bg-light {
+     background-color: #fafafa;
+     padding: 40px 20px;
+   }
+   .pricing-table {
+     display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;
+   }
+   .pricing-option {
+     flex: 1; min-width: 200px;
+     background: #fff; padding: 20px;
+     border-radius: 8px; text-align: center;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+     position: relative;
+     overflow: hidden;
+   }
+   .pricing-option img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover; /* This is the key property */
+     opacity: 0.5;
+     z-index: 0;
+   }
+   .pricing-option > div {
+     position: relative;
+     z-index: 1;
+     padding: 20px;
+     background-color: rgba(255, 255, 255, 0.8); /* Added background to text for better readability */
+     border-radius: 5px; /* Optional: add some rounded corners to the text background */
+   }
+   .pricing-option h3,
+   .pricing-option p,
+   .pricing-option .price {
+     margin: 5px 0; /* Adjust margins for better spacing */
+   }
+   .price { font-size: 20px; margin-top: 10px; font-weight: bold; display: block; }
 
 
   /* Cards de tratamiento */
