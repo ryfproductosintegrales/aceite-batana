@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aceite de Batana</title>
-  <link rel="icon" type="image/png" href="/img/favicon (100 x 100 px).svg">
   <style>   
     :root {
       --color-primario: #003366;
@@ -162,65 +161,56 @@ header nav a:not(:last-child)::after {
     }
     .pricing-option {
       flex: 1; min-width: 200px;
-      background: #fff; padding: 20px;
+      background: #fff; padding: 0; /* Remove padding here to let image take full space */
       border-radius: 8px; text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
     }
-    .price { font-size: 20px; margin-top: 10px; }
-
-
-
-    
-  /* Ofertas */
-   .section.bg-light {
-     background-color: #fafafa;
-     padding: 40px 20px;
-   }
-   .pricing-table {
-     display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;
-   }
-   .pricing-option {
-     flex: 1; min-width: 200px;
-     background: #fff; padding: 20px;
-     border-radius: 8px; text-align: center;
-     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-     position: relative;
-     overflow: hidden;
-   }
-   .pricing-option img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     object-fit: cover; /* This is the key property */
-     opacity: 0.5;
-     z-index: 0;
-   }
-   .pricing-option > div {
-     position: relative;
-     z-index: 1;
-     padding: 20px;
-     background-color: rgba(255, 255, 255, 0.8); /* Added background to text for better readability */
-     border-radius: 5px; /* Optional: add some rounded corners to the text background */
-   }
-   .pricing-option h3,
-   .pricing-option p,
-   .pricing-option .price {
-     margin: 5px 0; /* Adjust margins for better spacing */
-   }
-   .price { font-size: 20px; margin-top: 10px; font-weight: bold; display: block; }
+    .pricing-option img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This is the key property for image fitting */
+      opacity: 0.5;
+      z-index: 0;
+    }
+    .pricing-option > div { /* Target the div containing the text content */
+      position: relative;
+      z-index: 1;
+      padding: 20px; /* Add padding to the text content */
+      background-color: rgba(255, 255, 255, 0.8); /* Added background to text for better readability */
+      border-radius: 8px; /* Apply border-radius to the inner div for a cleaner look */
+      height: 100%; /* Ensure inner div takes full height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+    }
+    .pricing-option h3,
+    .pricing-option p,
+    .pricing-option .price {
+      margin: 5px 0; /* Adjust margins for better spacing */
+      text-align: center; /* Ensure text is centered */
+    }
+    .price { font-size: 20px; margin-top: 10px; font-weight: bold; display: block; }
 
 
   /* Cards de tratamiento */
     .treatment-options {
       display: flex; flex-wrap: wrap; gap: 20px;
+      justify-content: center; /* Center the cards in this section */
     }
     .treatment-options .card {
-      flex: 1; min-width: 280px;
+      flex: 1; min-width: 280px; max-width: 300px; /* Added max-width for better control */
       background: #fff; padding: 16px; text-align: center;
       border: 1px solid #ccc; border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex; /* Use flexbox for inner content alignment */
+      flex-direction: column;
+      align-items: center; /* Center items horizontally within the card */
     }
     .treatment-options .card img {
       width: 100%; height: auto; border-radius: 8px;
@@ -341,7 +331,7 @@ header nav a:not(:last-child)::after {
 
   
   <header>
-    <img src="img/batana1.png" alt="Logo R&F Productos Integrales" class="logo-img">
+    <img src="img/logo-header.png" alt="Logo R&F Productos Integrales" class="logo-img">
 
 
     <nav>
@@ -533,34 +523,33 @@ header nav a:not(:last-child)::after {
       <p>Elige la cantidad que deseas y aprovecha nuestras tarifas especiales por volumen:</p>
       <div class="pricing-table">
         
-        <div class="pricing-option" style="position: relative; overflow: hidden;">
-          <img src="img/oferta-detalle.jpg" alt="Precio Detalle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
-          <div style="position: relative; z-index: 1; padding: 20px;">
+        <div class="pricing-option">
+          <img src="img/oferta-detalle.jpg" alt="Precio Detalle">
+          <div>
             <h3>Precio Detalle</h3>
             <p>1 a 5 frascos</p>
-            <p class="price"><strong>RD$1200 c/u</strong></p>
+            <p class="price"><strong>RD$1300 c/u</strong></p>
           </div>
         </div>
 
-        <div class="pricing-option" style="position: relative; overflow: hidden;">
-          <img src="img/oferta-detalle.jpg" alt="Precio al Por Mayor" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
-          <div style="position: relative; z-index: 1; padding: 20px;">
+        <div class="pricing-option">
+          <img src="img/oferta-mayor.jpg" alt="Precio al Por Mayor">
+          <div>
             <h3>Precio al Por Mayor</h3>
             <p>6 frascos o más</p>
             <p class="price"><strong>RD$1000 c/u</strong></p>
           </div>
         </div>
 
-        <div class="pricing-option" style="position: relative; overflow: hidden;">
-          <img src="img/oferta especial.png" alt="Precios Especiales" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
-          <div style="position: relative; z-index: 1; padding: 20px;">
+        <div class="pricing-option">
+          <img src="img/oferta-especial.jpg" alt="Precios Especiales">
+          <div>
             <h3>Precios Especiales</h3>
             <p>Para tiendas, salones y vendedores</p>
             <p>Escríbenos al <a href="https://wa.me/18094254540?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20precios%20especiales%20para%20tiendas/salones/vendedores." target="_blank" style="color: var(--color-boton); text-decoration: none; font-weight: bold;">WhatsApp: 809-425-4540</a> para más información.</p>
           </div>
         </div>
-
-      </div>
+        </div>
       <div class="cta-button" style="margin-top:20px;">
        <a class="boton-wsp" href="#precios">🛒 Hacer Pedido por WhatsApp</a>
       
@@ -578,13 +567,13 @@ header nav a:not(:last-child)::after {
         <div class="card">
           <img src="img/imagen2.png" alt="1 Frasco">
           <h3>1 Frasco – 15 días</h3>
-          <p><strong>RD$1,200</strong></p>
+          <p><strong>RD$1,300</strong></p>
           <a href="#pedido" class="boton-wsp set-cantidad" data-cantidad="1">📦 Pedido</a>
         </div>
         <div class="card">
           <img src="img/imagen1.png" alt="3 Frascos">
           <h3>3 Frascos – 45 días</h3>
-          <p><strong>RD$3,400</strong></p>
+          <p><strong>RD$3,600</strong></p>
           <a href="#pedido" class="boton-wsp set-cantidad" data-cantidad="3">📦 Pedido</a>
         </div>
         <div class="card">
@@ -657,7 +646,7 @@ header nav a:not(:last-child)::after {
       margin: 40px auto;
       text-align: center;
     ">
-      © Aceite de Batana 2025 - Todos los derechos reservados.
+      © R&F Productos Integrales 2025 / Aceite de Batana - Todos los derechos reservados.
     </div>
   </section>
 </footer>
